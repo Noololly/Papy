@@ -11,11 +11,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: make 
-      run: |
-        mkdir build
-        make
+      run:  make
     - name: Upload binary
       uses: actions/upload-artifact@v4
       with:
         name: papy
-        path: build/papy    
+        path: bin/papy    
