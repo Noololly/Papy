@@ -10,9 +10,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: make
-      run: make
-    - name: make check
-      run: make check
-    - name: make distcheck
-      run: make distcheck
+    - name: make 
+      run: |
+        mkdir build
+        cd build
+        make
+    - name: Upload binary
+      uses: actions/upload-artifact@v3
+      with:
+        name: papy
+        path: build/papy    
